@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CODELYFT | Managed Amazon Selling Service</title>
+
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: black;
+            margin: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Custom scrollbar for better aesthetics */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #000;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #333;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #444;
+        }
+    </style>
+</head>
+<body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+        const { useState } = React;
+
+        function ManagedServiceWebsite() {
+            const [activeTab, setActiveTab] = useState('overview');
+            const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+            return (
+                <div className="min-h-screen bg-black text-white font-sans overflow-hidden">
+                    {/* Ambient Background */}
+                    <div className="fixed inset-0 opacity-[0.04] pointer-events-none">
+                        <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.15)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.15)_1px,transparent_1px)] bg-[size:80px_80px]" />
+                    </div>
+
+                    {/* Navbar */}
+                    <header className="sticky top-0 z-50 border-b border-white/10 backdrop-blur-xl bg-black/70">
+                        <div className="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
+                            <div className="flex items-center gap-3">
+                                <a href="index.html" className="flex items-center gap-3">
+                                    <div className="w-2 h-2 rounded-full bg-orange-400" />
+                                    <span className="tracking-[0.3em] text-sm font-medium">CODELYFT</span>
+                                </a>
+                            </div>
+
+                            <nav className="hidden md:flex items-center gap-10 text-sm text-white/55">
+                                <a href="index.html#about" className="hover:text-white transition">About</a>
+                                <a href="index.html#amazon-sellers" className="hover:text-white transition">Amazon Sellers</a>
+                                <a href="index.html#services" className="hover:text-white transition">Services</a>
+                                <a href="index.html#operations" className="hover:text-white transition">Operations</a>
+                                <a href="index.html#faq" className="hover:text-white transition">FAQ</a>
+                                <a href="#overview" className="hover:text-white transition text-green-400">Managed Service</a>
+                                <a href="index.html#contact" className="hover:text-white transition">Contact</a>
+                            </nav>
+
+                            {/* Mobile Menu Button */}
+                            <button
+                                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                                className="md:hidden p-2 text-white/55 hover:text-white transition"
+                            >
+                                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={mobileMenuOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16M4 18h16"} />
+                                </svg>
+                            </button>
+                        </div>
+
+                        {/* Mobile Menu */}
+                        {mobileMenuOpen && (
+                            <div className="md:hidden border-t border-white/10 bg-black/95 backdrop-blur-xl">
+                                <nav className="max-w-7xl mx-auto px-6 py-6 flex flex-col gap-4 text-sm">
+                                    <a href="index.html#about" onClick={() => setMobileMenuOpen(false)} className="text-white/55 hover:text-white transition py-2">About</a>
+                                    <a href="index.html#amazon-sellers" onClick={() => setMobileMenuOpen(false)} className="text-white/55 hover:text-white transition py-2">Amazon Sellers</a>
+                                    <a href="index.html#services" onClick={() => setMobileMenuOpen(false)} className="text-white/55 hover:text-white transition py-2">Services</a>
+                                    <a href="index.html#operations" onClick={() => setMobileMenuOpen(false)} className="text-white/55 hover:text-white transition py-2">Operations</a>
+                                    <a href="index.html#faq" onClick={() => setMobileMenuOpen(false)} className="text-white/55 hover:text-white transition py-2">FAQ</a>
+                                    <a href="#overview" onClick={() => setMobileMenuOpen(false)} className="text-green-400 py-2">Managed Service</a>
+                                    <a href="index.html#contact" onClick={() => setMobileMenuOpen(false)} className="text-white/55 hover:text-white transition py-2">Contact</a>
+                                </nav>
+                            </div>
+                        )}
+                    </header>
+
+                    {/* Hero */}
+                    <section className="relative border-b border-white/10 min-h-screen flex items-center">
+                        <div className="absolute inset-0 bg-gradient-to-br from-green-500/10 via-blue-500/10 to-orange-500/10"></div>
+                        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[700px] bg-green-500/10 blur-[180px] rounded-full" />
+
+                        <div className="relative max-w-7xl mx-auto px-6 py-32 md:py-44 z-10">
+                            <div className="max-w-4xl">
+                                <div className="inline-flex items-center gap-3 border border-white/10 rounded-full px-4 py-2 text-xs uppercase tracking-[0.25em] text-white/50 bg-white/[0.02] mb-10">
+                                    Done-For-You Amazon Selling
+                                </div>
+
+                                <h1 className="text-6xl md:text-8xl leading-[0.9] tracking-tight font-semibold max-w-5xl">
+                                    Profit without
+                                    <br />
+                                    the hassle.
+                                    <br />
+                                    We do it all.
+                                </h1>
+
+                                <p className="mt-10 text-lg md:text-xl text-white/60 max-w-2xl leading-relaxed">
+                                    Don't have time for end-to-end Amazon selling? Tell us your budget, target market, and commitment period. We'll generate guaranteed profits while you focus on what matters. Just pay our platform and service fees.
+                                </p>
+
+                                <div className="mt-12 flex flex-wrap gap-4">
+                                    <a
+                                        href="#pricing"
+                                        className="px-7 py-4 rounded-2xl bg-green-500 text-black font-medium hover:bg-green-400 transition"
+                                    >
+                                        View Profit Guarantees
+                                    </a>
+
+                                    <a
+                                        href="#how-it-works"
+                                        className="px-7 py-4 rounded-2xl border border-white/10 bg-white/[0.03] hover:bg-white/[0.06] transition text-white"
+                                    >
+                                        How It Works
+                                    </a>
+                                </div>
+                            </div>
+
+                            {/* Profit Visualization */}
+                            <div className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl">
+                                {[
+                                    { number: '25-45%', label: 'Guaranteed Monthly ROI' },
+                                    { number: '30 Days', label: 'To First Profits' },
+                                    { number: '100%', label: 'Managed Service' },
+                                    { number: '$5K+', label: 'Minimum Investment' }
+                                ].map((stat) => (
+                                    <div key={stat.number} className="text-center">
+                                        <div className="text-3xl md:text-4xl font-bold text-green-400 mb-2">
+                                            {stat.number}
+                                        </div>
+                                        <div className="text-white/50 text-sm uppercase tracking-wide">
+                                            {stat.label}
+                                        </div>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                    </section>
+
+                    {/* How It Works */}
+                    <section id="how-it-works" className="max-w-7xl mx-auto px-6 py-28 border-b border-white/10">
+                        <div className="text-center mb-16">
+                            <div className="text-sm uppercase tracking-[0.25em] text-green-400 mb-6">
+                                How It Works
+                            </div>
+
+                            <h2 className="text-5xl md:text-6xl leading-tight tracking-tight font-semibold max-w-4xl mx-auto">
+                                Simple process, guaranteed results.
+                            </h2>
+                        </div>
+
+                        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                            {[
+                                {
+                                    step: '01',
+                                    title: 'Tell Us Your Goals',
+                                    desc: 'Share your budget, target market, and commitment period. We analyze the opportunity and provide a profit guarantee.',
+                                    icon: '🎯'
+                                },
+                                {
+                                    step: '02',
+                                    title: 'We Handle Everything',
+                                    desc: 'Product research, sourcing, listing optimization, inventory management, PPC campaigns, and customer service - all managed by our experts.',
+                                    icon: '⚙️'
+                                },
+                                {
+                                    step: '03',
+                                    title: 'You Get Profits',
+                                    desc: 'Monthly profit distributions minus our platform and service fees. Transparent reporting and real-time performance tracking.',
+                                    icon: '💰'
+                                },
+                                {
+                                    step: '04',
+                                    title: 'Scale Together',
+                                    desc: 'Based on performance, we optimize and scale your operations. Increase budget for higher guaranteed returns.',
+                                    icon: '📈'
+                                }
+                            ].map((item) => (
+                                <div
+                                    key={item.step}
+                                    className="text-center group"
+                                >
+                                    <div className="w-20 h-20 mx-auto mb-6 bg-green-500/10 rounded-2xl flex items-center justify-center text-3xl group-hover:bg-green-500/20 transition">
+                                        {item.icon}
+                                    </div>
+
+                                    <div className="text-sm text-green-400 font-mono mb-4">
+                                        {item.step}
+                                    </div>
+
+                                    <h3 className="text-xl font-medium mb-4 group-hover:text-green-400 transition">
+                                        {item.title}
+                                    </h3>
+
+                                    <p className="text-white/60 leading-relaxed">
+                                        {item.desc}
+                                    </p>
+                                </div>
+                            ))}
+                        </div>
+                    </section>
+
+                    {/* What's Included */}
+                    <section className="max-w-7xl mx-auto px-6 py-28 border-b border-white/10">
+                        <div className="grid md:grid-cols-2 gap-20 items-center">
+                            <div>
+                                <div className="text-sm uppercase tracking-[0.25em] text-green-400 mb-6">
+                                    Complete Management
+                                </div>
+
+                                <h2 className="text-5xl md:text-6xl leading-tight tracking-tight font-semibold max-w-xl">
+                                    Everything handled, nothing left to chance.
+                                </h2>
+                            </div>
+
+                            <div className="space-y-6">
+                                {[
+                                    'Product research and selection using our intelligence platform',
+                                    'Supplier sourcing and relationship management',
+                                    'Professional photography and enhanced brand content (A+)',
+                                    'Optimized listing creation with SEO-optimized titles and bullets',
+                                    'Strategic pricing based on market data and competition',
+                                    'PPC campaign management and optimization',
+                                    'Inventory forecasting and automated reordering',
+                                    'Customer service and review management',
+                                    'Monthly performance reports and profit distributions',
+                                    '24/7 monitoring and issue resolution'
+                                ].map((item) => (
+                                    <div
+                                        key={item}
+                                        className="flex items-center gap-4 border-b border-white/5 pb-4 last:border-none"
+                                    >
+                                        <div className="w-2 h-2 rounded-full bg-green-400" />
+                                        <div className="text-white/70">{item}</div>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                    </section>
+
+                    {/* Pricing Tiers */}
+                    <section id="pricing" className="max-w-7xl mx-auto px-6 py-28 border-b border-white/10">
+                        <div className="text-center mb-16">
+                            <div className="text-sm uppercase tracking-[0.25em] text-green-400 mb-6">
+                                Profit Guarantees
+                            </div>
+
+                            <h2 className="text-5xl md:text-6xl leading-tight tracking-tight font-semibold max-w-4xl mx-auto">
+                                Choose your profit level.
+                            </h2>
+                        </div>
+
+                        <div className="grid md:grid-cols-3 gap-8">
+                            {[
+                                {
+                                    tier: 'Starter',
+                                    budget: '$5,000 - $15,000',
+                                    roi: '25-30%',
+                                    fee: '15% platform fee + $500/mo service',
+                                    features: ['1 product line', 'Basic PPC management', 'Monthly reporting', 'Email support'],
+                                    popular: false
+                                },
+                                {
+                                    tier: 'Professional',
+                                    budget: '$15,000 - $50,000',
+                                    roi: '30-40%',
+                                    fee: '12% platform fee + $1,000/mo service',
+                                    features: ['3 product lines', 'Advanced PPC optimization', 'Weekly reporting', 'Priority support', 'Custom strategies'],
+                                    popular: true
+                                },
+                                {
+                                    tier: 'Enterprise',
+                                    budget: '$50,000+',
+                                    roi: '35-45%',
+                                    fee: '10% platform fee + $2,500/mo service',
+                                    features: ['Unlimited products', 'Full PPC & SEO suite', 'Daily reporting', 'Dedicated account manager', 'Custom development', 'API integrations'],
+                                    popular: false
+                                }
+                            ].map((plan) => (
+                                <div
+                                    key={plan.tier}
+                                    className={`rounded-3xl border p-8 hover:border-green-500/30 transition relative ${
+                                        plan.popular ? 'border-green-500/50 bg-green-500/5' : 'border-white/10 bg-white/[0.02]'
+                                    }`}
+                                >
+                                    {plan.popular && (
+                                        <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
+                                            <span className="bg-green-500 text-black px-4 py-1 rounded-full text-sm font-medium">
+                                                Most Popular
+                                            </span>
+                                        </div>
+                                    )}
+
+                                    <div className="text-center mb-8">
+                                        <h3 className="text-2xl font-bold mb-2">{plan.tier}</h3>
+                                        <div className="text-3xl font-bold text-green-400 mb-1">{plan.roi} ROI</div>
+                                        <div className="text-white/50 text-sm">{plan.budget}</div>
+                                    </div>
+
+                                    <div className="mb-8">
+                                        <div className="text-white/70 font-medium mb-4">Monthly Fee Structure:</div>
+                                        <div className="text-green-400 font-mono text-sm">{plan.fee}</div>
+                                    </div>
+
+                                    <ul className="space-y-3 mb-8">
+                                        {plan.features.map((feature) => (
+                                            <li key={feature} className="flex items-center gap-3 text-white/70 text-sm">
+                                                <div className="w-1.5 h-1.5 rounded-full bg-green-400" />
+                                                {feature}
+                                            </li>
+                                        ))}
+                                    </ul>
+
+                                    <a
+                                        href="mailto:managed@codelyft.co.uk?subject=Managed Service Inquiry"
+                                        className={`w-full py-4 rounded-2xl font-medium transition text-center block ${
+                                            plan.popular
+                                                ? 'bg-green-500 text-black hover:bg-green-400'
+                                                : 'bg-white/10 text-white hover:bg-white/20'
+                                        }`}
+                                    >
+                                        Start {plan.tier} Plan
+                                    </a>
+                                </div>
+                            ))}
+                        </div>
+
+                        <div className="mt-16 text-center">
+                            <div className="bg-white/5 border border-white/10 rounded-2xl p-8 max-w-4xl mx-auto">
+                                <h3 className="text-2xl font-bold mb-4">Profit Guarantee Terms</h3>
+                                <div className="grid md:grid-cols-2 gap-8 text-left">
+                                    <div>
+                                        <h4 className="text-green-400 font-medium mb-2">What's Guaranteed</h4>
+                                        <ul className="space-y-2 text-white/70 text-sm">
+                                            <li>• Minimum ROI as stated in your plan</li>
+                                            <li>• Monthly profit distributions</li>
+                                            <li>• Transparent performance reporting</li>
+                                            <li>• 30-day money-back guarantee</li>
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <h4 className="text-green-400 font-medium mb-2">What's Not Included</h4>
+                                        <ul className="space-y-2 text-white/70 text-sm">
+                                            <li>• Market volatility beyond our control</li>
+                                            <li>• Amazon policy changes</li>
+                                            <li>• Force majeure events</li>
+                                            <li>• Client-requested strategy changes</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    {/* Testimonials */}
+                    <section className="max-w-7xl mx-auto px-6 py-28 border-b border-white/10">
+                        <div className="text-center mb-16">
+                            <div className="text-sm uppercase tracking-[0.25em] text-green-400 mb-6">
+                                Success Stories
+                            </div>
+
+                            <h2 className="text-5xl md:text-6xl leading-tight tracking-tight font-semibold max-w-4xl mx-auto">
+                                Profits without the work.
+                            </h2>
+                        </div>
+
+                        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                            {[
+                                {
+                                    quote: "I invested $10K and got 28% monthly ROI without doing any work. CodeLyft handles everything from product selection to customer service.",
+                                    author: "Michael Chen",
+                                    role: "Business Owner",
+                                    results: ["$2,800/mo profits", "28% ROI", "Zero time investment"],
+                                    plan: "Starter Plan"
+                                },
+                                {
+                                    quote: "As a busy executive, I don't have time for Amazon selling. CodeLyft's managed service gives me passive income with guaranteed returns.",
+                                    author: "Sarah Williams",
+                                    role: "Corporate Executive",
+                                    results: ["$8,500/mo profits", "35% ROI", "3 product lines"],
+                                    plan: "Professional Plan"
+                                },
+                                {
+                                    quote: "The profit guarantee gave me confidence to invest $75K. CodeLyft delivered 42% ROI while I focused on my main business.",
+                                    author: "David Rodriguez",
+                                    role: "Entrepreneur",
+                                    results: ["$31,500/mo profits", "42% ROI", "10+ products"],
+                                    plan: "Enterprise Plan"
+                                }
+                            ].map((testimonial) => (
+                                <div
+                                    key={testimonial.author}
+                                    className="rounded-3xl border border-white/10 bg-white/[0.02] p-8 hover:border-green-500/30 transition"
+                                >
+                                    <div className="text-green-400 text-sm font-mono mb-4">{testimonial.plan}</div>
+
+                                    <div className="text-white/70 text-lg leading-relaxed mb-6 italic">
+                                        "{testimonial.quote}"
+                                    </div>
+
+                                    <div className="mb-6">
+                                        <div className="font-medium text-white">{testimonial.author}</div>
+                                        <div className="text-white/50 text-sm">{testimonial.role}</div>
+                                    </div>
+
+                                    <div className="flex flex-wrap gap-2">
+                                        {testimonial.results.map((result) => (
+                                            <span key={result} className="px-3 py-1 rounded-full bg-green-500/10 text-green-400 text-xs">
+                                                {result}
+                                            </span>
+                                        ))}
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+                    </section>
+
+                    {/* FAQ */}
+                    <section className="max-w-7xl mx-auto px-6 py-28 border-b border-white/10">
+                        <div className="text-center mb-16">
+                            <div className="text-sm uppercase tracking-[0.25em] text-green-400 mb-6">
+                                Frequently Asked Questions
+                            </div>
+
+                            <h2 className="text-5xl md:text-6xl leading-tight tracking-tight font-semibold max-w-4xl mx-auto">
+                                Everything you need to know.
+                            </h2>
+                        </div>
+
+                        <div className="max-w-4xl mx-auto space-y-6">
+                            {[
+                                {
+                                    question: "What if you don't meet the profit guarantee?",
+                                    answer: "If we don't achieve the guaranteed ROI in any month, we'll refund the difference or provide additional services at no cost until the guarantee is met. Your capital is protected."
+                                },
+                                {
+                                    question: "Can I withdraw my investment anytime?",
+                                    answer: "We require a minimum 6-month commitment to ensure proper strategy implementation. After that, you can withdraw with 30 days notice, though we recommend longer commitments for optimal results."
+                                },
+                                {
+                                    question: "Who owns the Amazon accounts and listings?",
+                                    answer: "All accounts and listings are created in your name and under your control. We manage them on your behalf, but you maintain full ownership and can take over anytime."
+                                },
+                                {
+                                    question: "What happens if Amazon changes their policies?",
+                                    answer: "We continuously monitor Amazon policy changes and adapt our strategies accordingly. Our team has 10+ years of experience navigating platform changes and policy updates."
+                                },
+                                {
+                                    question: "Do you provide the capital, or do I need to fund everything?",
+                                    answer: "You provide the capital investment. We handle all operational aspects including product sourcing, inventory purchase, and ongoing operational costs within your budget."
+                                },
+                                {
+                                    question: "How do you select products and markets?",
+                                    answer: "Using our proprietary intelligence platform, we analyze market data, competition, trends, and profitability metrics to select optimal products and niches for your investment level."
+                                }
+                            ].map((faq, index) => (
+                                <div
+                                    key={index}
+                                    className="rounded-2xl border border-white/10 bg-white/[0.02] p-8 hover:border-green-500/30 transition"
+                                >
+                                    <h3 className="text-xl font-medium text-white mb-4">
+                                        {faq.question}
+                                    </h3>
+
+                                    <p className="text-white/60 leading-relaxed">
+                                        {faq.answer}
+                                    </p>
+                                </div>
+                            ))}
+                        </div>
+                    </section>
+
+                    {/* CTA */}
+                    <section className="px-6 pb-28">
+                        <div className="max-w-7xl mx-auto rounded-[2.5rem] border border-white/10 bg-gradient-to-br from-green-500/10 to-transparent p-14 md:p-20 text-center relative overflow-hidden">
+                            <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(34,197,94,0.15),transparent_60%)]" />
+
+                            <div className="relative z-10 max-w-3xl mx-auto">
+                                <div className="text-sm uppercase tracking-[0.25em] text-green-400 mb-6">
+                                    Start Earning Passive Income
+                                </div>
+
+                                <h2 className="text-5xl md:text-7xl leading-[0.95] tracking-tight font-semibold">
+                                    Ready to profit without the Amazon grind?
+                                </h2>
+
+                                <p className="mt-8 text-white/60 text-lg leading-relaxed">
+                                    Join successful business owners who earn passive income through our managed Amazon selling service. Tell us your budget and goals - we'll handle the rest.
+                                </p>
+
+                                <div className="mt-12">
+                                    <a
+                                        href="mailto:managed@codelyft.co.uk?subject=Managed Service Application"
+                                        className="inline-flex items-center px-8 py-4 rounded-2xl bg-green-500 text-black font-medium hover:bg-green-400 transition"
+                                    >
+                                        Apply for Managed Service
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    {/* Footer */}
+                    <footer className="border-t border-white/10 bg-black">
+                        <div className="max-w-7xl mx-auto px-6 py-10 flex flex-col md:flex-row items-center justify-between gap-6">
+                            <div>
+                                <a href="index.html" className="tracking-[0.35em] text-sm text-white font-medium block mb-3">
+                                    CODELYFT
+                                </a>
+
+                                <div className="text-white/40 text-sm">
+                                    Authoritative Amazon Intelligence & Managed Selling Services.
+                                </div>
+                            </div>
+
+                            <div className="text-white/40 text-sm text-center md:text-right">
+                                <div>United Kingdom</div>
+                                <div>Managed Amazon Selling Services</div>
+                            </div>
+                        </div>
+                    </footer>
+                </div>
+            );
+        }
+
+        // Render the component
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(<ManagedServiceWebsite />);
+    </script>
+</body>
+</html></content>
+<parameter name="filePath">/Users/usmankhan/Documents/Website/website/managed-service.html

@@ -48,6 +48,8 @@
         const { useState } = React;
 
         function CodelyftWebsite() {
+            const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
             return (
                 <div className="min-h-screen bg-black text-white font-sans overflow-hidden">
                     {/* Ambient Background */}
@@ -64,12 +66,40 @@
                             </div>
 
                             <nav className="hidden md:flex items-center gap-10 text-sm text-white/55">
+                                <a href="#about" className="hover:text-white transition">About</a>
+                                <a href="#amazon-sellers" className="hover:text-white transition">Amazon Sellers</a>
+                                <a href="#services" className="hover:text-white transition">Services</a>
                                 <a href="#operations" className="hover:text-white transition">Operations</a>
                                 <a href="#infrastructure" className="hover:text-white transition">Infrastructure</a>
-                                <a href="#partnerships" className="hover:text-white transition">Partnerships</a>
+                                <a href="#faq" className="hover:text-white transition">FAQ</a>
                                 <a href="#contact" className="hover:text-white transition">Contact</a>
                             </nav>
+
+                            {/* Mobile Menu Button */}
+                            <button
+                                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                                className="md:hidden p-2 text-white/55 hover:text-white transition"
+                            >
+                                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={mobileMenuOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16M4 18h16"} />
+                                </svg>
+                            </button>
                         </div>
+
+                        {/* Mobile Menu */}
+                        {mobileMenuOpen && (
+                            <div className="md:hidden border-t border-white/10 bg-black/95 backdrop-blur-xl">
+                                <nav className="max-w-7xl mx-auto px-6 py-6 flex flex-col gap-4 text-sm">
+                                    <a href="#about" onClick={() => setMobileMenuOpen(false)} className="text-white/55 hover:text-white transition py-2">About</a>
+                                    <a href="#amazon-sellers" onClick={() => setMobileMenuOpen(false)} className="text-white/55 hover:text-white transition py-2">Amazon Sellers</a>
+                                    <a href="#services" onClick={() => setMobileMenuOpen(false)} className="text-white/55 hover:text-white transition py-2">Services</a>
+                                    <a href="#operations" onClick={() => setMobileMenuOpen(false)} className="text-white/55 hover:text-white transition py-2">Operations</a>
+                                    <a href="#infrastructure" onClick={() => setMobileMenuOpen(false)} className="text-white/55 hover:text-white transition py-2">Infrastructure</a>
+                                    <a href="#faq" onClick={() => setMobileMenuOpen(false)} className="text-white/55 hover:text-white transition py-2">FAQ</a>
+                                    <a href="#contact" onClick={() => setMobileMenuOpen(false)} className="text-white/55 hover:text-white transition py-2">Contact</a>
+                                </nav>
+                            </div>
+                        )}
                     </header>
 
                     {/* Hero */}
@@ -91,24 +121,36 @@
                                 </h1>
 
                                 <p className="mt-10 text-lg md:text-xl text-white/60 max-w-2xl leading-relaxed">
-                                    Codelyft operates a procurement and inventory infrastructure focused on disciplined purchasing, marketplace intelligence, and scalable supplier partnerships across the UK.
+                                    Codelyft operates a procurement and inventory infrastructure focused on disciplined purchasing, marketplace intelligence, and scalable supplier partnerships. Helping Amazon sellers scale faster without the data overwhelm.
                                 </p>
 
                                 <div className="mt-12 flex flex-wrap gap-4">
                                     <a
-                                        href="#contact"
+                                        href="#services"
                                         className="px-7 py-4 rounded-2xl bg-orange-500 text-black font-medium hover:bg-orange-400 transition"
                                     >
-                                        Supplier Partnerships
-                                    </a>
-
-                                    <a
-                                        href="#operations"
-                                        className="px-7 py-4 rounded-2xl border border-white/10 bg-white/[0.03] hover:bg-white/[0.06] transition text-white"
-                                    >
-                                        View Operations
+                                        Explore Services
                                     </a>
                                 </div>
+                            </div>
+
+                            {/* Stats */}
+                            <div className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl">
+                                {[
+                                    { number: '500+', label: 'Active Suppliers' },
+                                    { number: '£2.5B+', label: 'Procurement Volume' },
+                                    { number: '99.8%', label: 'Uptime Reliability' },
+                                    { number: '23%', label: 'Average Cost Savings' }
+                                ].map((stat) => (
+                                    <div key={stat.number} className="text-center">
+                                        <div className="text-3xl md:text-4xl font-bold text-orange-400 mb-2">
+                                            {stat.number}
+                                        </div>
+                                        <div className="text-white/50 text-sm uppercase tracking-wide">
+                                            {stat.label}
+                                        </div>
+                                    </div>
+                                ))}
                             </div>
                         </div>
                     </section>
@@ -150,33 +192,239 @@
                         </div>
                     </section>
 
-                    {/* Operations */}
-                    <section
-                        id="operations"
-                        className="max-w-7xl mx-auto px-6 py-28 grid md:grid-cols-2 gap-20 items-center"
-                    >
-                        <div>
-                            <div className="text-sm uppercase tracking-[0.25em] text-orange-400 mb-6">
-                                Operations
+                    {/* About */}
+                    <section id="about" className="max-w-7xl mx-auto px-6 py-28 border-b border-white/10">
+                        <div className="grid md:grid-cols-2 gap-20 items-center">
+                            <div>
+                                <div className="text-sm uppercase tracking-[0.25em] text-orange-400 mb-6">
+                                    About Codelyft
+                                </div>
+
+                                <h2 className="text-5xl md:text-6xl leading-tight tracking-tight font-semibold max-w-xl">
+                                    Transforming procurement through data-driven infrastructure.
+                                </h2>
                             </div>
 
-                            <h2 className="text-5xl md:text-6xl leading-tight tracking-tight font-semibold max-w-xl">
-                                Infrastructure-first procurement operations.
+                            <div className="space-y-6 text-white/65 text-lg leading-relaxed">
+                                <p>
+                                    Founded with the vision of modernizing UK commerce infrastructure, Codelyft combines quantitative analysis, operational excellence, and strategic partnerships to deliver superior procurement outcomes.
+                                </p>
+
+                                <p>
+                                    Our platform integrates real-time marketplace intelligence, predictive forecasting, and automated execution to ensure optimal inventory management and supplier relationships.
+                                </p>
+
+                                <p>
+                                    We serve businesses seeking operational efficiency, cost optimization, and scalable growth through disciplined commerce practices.
+                                </p>
+                            </div>
+                        </div>
+                    </section>
+
+                    {/* Amazon Sellers Section */}
+                    <section id="amazon-sellers" className="max-w-7xl mx-auto px-6 py-28 border-b border-white/10 bg-gradient-to-br from-orange-500/5 to-transparent">
+                        <div className="grid md:grid-cols-2 gap-20 items-center">
+                            <div>
+                                <div className="text-sm uppercase tracking-[0.25em] text-orange-400 mb-6">
+                                    For Amazon Sellers
+                                </div>
+
+                                <h2 className="text-5xl md:text-6xl leading-tight tracking-tight font-semibold max-w-xl">
+                                    Scale your Amazon business without the data overwhelm.
+                                </h2>
+
+                                <p className="mt-6 text-white/60 text-lg leading-relaxed">
+                                    Stop drowning in spreadsheets and unprofitable decisions. Focus on what matters: growing your sales and maximizing profits.
+                                </p>
+                            </div>
+
+                            <div className="space-y-8">
+                                {[
+                                    {
+                                        icon: '🚀',
+                                        title: 'Launch Faster',
+                                        desc: 'Get your products listed and selling within days, not months. Our automated systems handle the heavy lifting.'
+                                    },
+                                    {
+                                        icon: '📊',
+                                        title: 'Data-Driven Without the Drama',
+                                        desc: 'Navigate complex Amazon data effortlessly. We transform overwhelming metrics into clear, actionable insights.'
+                                    },
+                                    {
+                                        icon: '💰',
+                                        title: 'Profit from Day One',
+                                        desc: 'Make informed pricing and inventory decisions that drive profitability, not guesswork and costly mistakes.'
+                                    },
+                                    {
+                                        icon: '⚡',
+                                        title: 'Scale Without Struggle',
+                                        desc: 'Expand your catalog and operations smoothly. Handle increased volume without operational chaos.'
+                                    }
+                                ].map((benefit) => (
+                                    <div
+                                        key={benefit.title}
+                                        className="flex items-start gap-4 p-6 rounded-2xl border border-white/10 bg-white/[0.02] hover:border-orange-500/30 transition"
+                                    >
+                                        <div className="text-2xl">{benefit.icon}</div>
+                                        <div>
+                                            <h3 className="text-xl font-medium text-white mb-2">
+                                                {benefit.title}
+                                            </h3>
+                                            <p className="text-white/60 leading-relaxed text-sm">
+                                                {benefit.desc}
+                                            </p>
+                                        </div>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+
+                        <div className="mt-16 text-center">
+                            <div className="inline-flex items-center gap-3 border border-white/10 rounded-full px-6 py-3 text-sm uppercase tracking-[0.25em] text-white/50 bg-white/[0.02] mb-8">
+                                Join Sellers Already Scaling
+                            </div>
+
+                            <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+                                {[
+                                    { stat: '3x', desc: 'Faster product launches' },
+                                    { stat: '40%', desc: 'Higher profit margins' },
+                                    { stat: '60%', desc: 'Less time on data analysis' }
+                                ].map((metric) => (
+                                    <div key={metric.stat} className="text-center">
+                                        <div className="text-4xl md:text-5xl font-bold text-orange-400 mb-2">
+                                            {metric.stat}
+                                        </div>
+                                        <div className="text-white/60 text-sm">
+                                            {metric.desc}
+                                        </div>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                    </section>
+
+                    {/* Services */}
+                    <section id="services" className="max-w-7xl mx-auto px-6 py-28 border-b border-white/10">
+                        <div className="text-center mb-16">
+                            <div className="text-sm uppercase tracking-[0.25em] text-orange-400 mb-6">
+                                Our Services
+                            </div>
+
+                            <h2 className="text-5xl md:text-6xl leading-tight tracking-tight font-semibold max-w-4xl mx-auto">
+                                Comprehensive procurement solutions.
                             </h2>
                         </div>
 
-                        <div className="space-y-8 text-white/65 text-lg leading-relaxed">
-                            <p>
-                                Codelyft integrates marketplace intelligence, procurement systems, inventory forecasting, and operational automation into a unified commerce workflow.
-                            </p>
+                        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                            {[
+                                {
+                                    title: 'Market Intelligence',
+                                    desc: 'Real-time pricing analysis, competitor monitoring, and trend forecasting across UK marketplaces.',
+                                    features: ['Live pricing data', 'Competitor analysis', 'Demand forecasting', 'Risk assessment']
+                                },
+                                {
+                                    title: 'Inventory Optimization',
+                                    desc: 'Data-driven inventory planning and allocation for maximum efficiency and minimal waste.',
+                                    features: ['Demand modeling', 'Stock optimization', 'Turnover analysis', 'Automated reordering']
+                                },
+                                {
+                                    title: 'Supplier Management',
+                                    desc: 'End-to-end supplier relationship management with performance tracking and contract optimization.',
+                                    features: ['Supplier scoring', 'Contract management', 'Performance monitoring', 'Relationship analytics']
+                                },
+                                {
+                                    title: 'Procurement Automation',
+                                    desc: 'Streamlined purchasing workflows with intelligent automation and approval processes.',
+                                    features: ['Automated ordering', 'Approval workflows', 'Integration APIs', 'Reporting dashboards']
+                                },
+                                {
+                                    title: 'Risk Management',
+                                    desc: 'Comprehensive risk assessment and mitigation strategies for procurement operations.',
+                                    features: ['Market risk analysis', 'Supplier risk scoring', 'Contingency planning', 'Insurance coordination']
+                                },
+                                {
+                                    title: 'Analytics & Reporting',
+                                    desc: 'Advanced analytics and customizable reporting for procurement performance insights.',
+                                    features: ['Custom dashboards', 'Performance metrics', 'Cost analysis', 'ROI tracking']
+                                }
+                            ].map((service) => (
+                                <div
+                                    key={service.title}
+                                    className="rounded-3xl border border-white/10 bg-white/[0.02] p-8 hover:border-orange-500/30 transition group"
+                                >
+                                    <h3 className="text-2xl font-medium leading-tight mb-4 group-hover:text-orange-400 transition">
+                                        {service.title}
+                                    </h3>
 
-                            <p>
-                                Our focus is sustainable inventory operations, supplier consistency, and scalable purchasing infrastructure.
-                            </p>
+                                    <p className="text-white/60 leading-relaxed text-sm mb-6">
+                                        {service.desc}
+                                    </p>
 
-                            <p>
-                                We prioritize long-term operational discipline over short-term opportunistic sourcing.
-                            </p>
+                                    <ul className="space-y-2">
+                                        {service.features.map((feature) => (
+                                            <li key={feature} className="flex items-center gap-3 text-white/50 text-sm">
+                                                <div className="w-1.5 h-1.5 rounded-full bg-orange-400" />
+                                                {feature}
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </div>
+                            ))}
+                        </div>
+                    </section>
+
+                    {/* FAQ */}
+                    <section id="faq" className="max-w-7xl mx-auto px-6 py-28 border-b border-white/10">
+                        <div className="text-center mb-16">
+                            <div className="text-sm uppercase tracking-[0.25em] text-orange-400 mb-6">
+                                Frequently Asked Questions
+                            </div>
+
+                            <h2 className="text-5xl md:text-6xl leading-tight tracking-tight font-semibold max-w-4xl mx-auto">
+                                Everything you need to know.
+                            </h2>
+                        </div>
+
+                        <div className="max-w-4xl mx-auto space-y-6">
+                            {[
+                                {
+                                    question: "How does Codelyft's marketplace intelligence work?",
+                                    answer: "Our platform continuously monitors pricing, competition, and market conditions across UK marketplaces using advanced algorithms and real-time data feeds. This intelligence informs procurement decisions and risk assessments."
+                                },
+                                {
+                                    question: "What types of businesses benefit from your services?",
+                                    answer: "We serve retail businesses, manufacturers, distributors, and any organization with complex procurement needs. Our solutions scale from small operations to enterprise-level procurement infrastructure."
+                                },
+                                {
+                                    question: "How long does implementation typically take?",
+                                    answer: "Implementation timelines vary based on complexity, but most clients see initial benefits within 4-6 weeks. Full platform integration and optimization typically completes within 3-6 months."
+                                },
+                                {
+                                    question: "Do you work with international suppliers?",
+                                    answer: "While our primary focus is UK commerce infrastructure, we have extensive experience coordinating with international suppliers and managing cross-border procurement operations."
+                                },
+                                {
+                                    question: "What kind of ROI can businesses expect?",
+                                    answer: "Clients typically see 15-30% cost reductions, 20-40% improvement in procurement efficiency, and significant improvements in supplier performance and inventory optimization."
+                                },
+                                {
+                                    question: "Is my data secure with Codelyft?",
+                                    answer: "Absolutely. We employ enterprise-grade security measures, including encryption, secure APIs, and compliance with UK data protection regulations. Your procurement data is protected with the same standards as major financial institutions."
+                                }
+                            ].map((faq, index) => (
+                                <div
+                                    key={index}
+                                    className="rounded-2xl border border-white/10 bg-white/[0.02] p-8 hover:border-orange-500/30 transition"
+                                >
+                                    <h3 className="text-xl font-medium text-white mb-4">
+                                        {faq.question}
+                                    </h3>
+
+                                    <p className="text-white/60 leading-relaxed">
+                                        {faq.answer}
+                                    </p>
+                                </div>
+                            ))}
                         </div>
                     </section>
 
@@ -283,11 +531,11 @@
                                 </div>
 
                                 <h2 className="text-5xl md:text-7xl leading-[0.95] tracking-tight font-semibold">
-                                    Built for scalable procurement operations.
+                                    Ready to scale your business?
                                 </h2>
 
                                 <p className="mt-8 text-white/60 text-lg leading-relaxed">
-                                    Codelyft works with suppliers seeking structured purchasing operations, efficient coordination, and long-term commercial partnerships.
+                                    Join hundreds of sellers who have transformed their operations with our quantitative commerce infrastructure. Start selling more, profit faster, and scale without the struggle.
                                 </p>
 
                                 <div className="mt-12">
@@ -295,7 +543,7 @@
                                         href="mailto:partnerships@codelyft.co.uk"
                                         className="inline-flex items-center px-8 py-4 rounded-2xl bg-orange-500 text-black font-medium hover:bg-orange-400 transition"
                                     >
-                                        partnerships@codelyft.co.uk
+                                        support@codelyftcom
                                     </a>
                                 </div>
                             </div>
@@ -307,20 +555,64 @@
                         id="contact"
                         className="border-t border-white/10 bg-black"
                     >
-                        <div className="max-w-7xl mx-auto px-6 py-10 flex flex-col md:flex-row items-center justify-between gap-6">
-                            <div>
-                                <div className="tracking-[0.35em] text-sm text-white font-medium">
-                                    CODELYFT
+                        <div className="max-w-7xl mx-auto px-6 py-16">
+                            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+                                <div>
+                                    <div className="tracking-[0.35em] text-sm text-white font-medium mb-6">
+                                        CODELYFT
+                                    </div>
+
+                                    <p className="text-white/40 text-sm leading-relaxed mb-6">
+                                        Quantitative commerce infrastructure for modern procurement operations across the United Kingdom.
+                                    </p>
+
+                                    <div className="space-y-2 text-white/40 text-sm">
+                                        <div>London, United Kingdom</div>
+                                        <div>Supplier & Procurement Partnerships</div>
+                                    </div>
                                 </div>
 
-                                <div className="text-white/40 text-sm mt-3">
-                                    Quantitative commerce infrastructure for modern procurement operations.
+                                <div>
+                                    <h4 className="text-white font-medium mb-6">Services</h4>
+                                    <ul className="space-y-3 text-white/40 text-sm">
+                                        <li><a href="#amazon-sellers" className="hover:text-white transition">Amazon Sellers</a></li>
+                                        <li><a href="#services" className="hover:text-white transition">Market Intelligence</a></li>
+                                        <li><a href="#services" className="hover:text-white transition">Inventory Optimization</a></li>
+                                        <li><a href="#services" className="hover:text-white transition">Supplier Management</a></li>
+                                        <li><a href="#services" className="hover:text-white transition">Procurement Automation</a></li>
+                                    </ul>
+                                </div>
+
+                                <div>
+                                    <h4 className="text-white font-medium mb-6">Company</h4>
+                                    <ul className="space-y-3 text-white/40 text-sm">
+                                        <li><a href="#about" className="hover:text-white transition">About Us</a></li>
+                                        <li><a href="#operations" className="hover:text-white transition">Operations</a></li>
+                                        <li><a href="#contact" className="hover:text-white transition">Contact</a></li>
+                                    </ul>
+                                </div>
+
+                                <div>
+                                    <h4 className="text-white font-medium mb-6">Support</h4>
+                                    <ul className="space-y-3 text-white/40 text-sm">
+                                        <li><a href="#faq" className="hover:text-white transition">FAQ</a></li>
+                                        <li><a href="mailto:support@codelyft.co.uk" className="hover:text-white transition">Technical Support</a></li>
+                                        <li><a href="mailto:partnerships@codelyft.co.uk" className="hover:text-white transition">Partnership Inquiries</a></li>
+                                        <li><a href="mailto:info@codelyft.co.uk" className="hover:text-white transition">General Information</a></li>
+                                    </ul>
                                 </div>
                             </div>
 
-                            <div className="text-white/40 text-sm text-center md:text-right">
-                                <div>United Kingdom</div>
-                                <div>Supplier & Procurement Partnerships</div>
+                            <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row items-center justify-between gap-6">
+                                <div className="text-white/40 text-sm">
+                                    © 2024 Codelyft. All rights reserved.
+                                </div>
+
+                                <div className="flex items-center gap-6 text-white/40 text-sm">
+                                    <a href="#" className="hover:text-white transition">Privacy Policy</a>
+                                    <a href="#" className="hover:text-white transition">Terms of Service</a>
+                                    <a href="#" className="hover:text-white transition">Cookie Policy</a>
+                                </div>
                             </div>
                         </div>
                     </footer>

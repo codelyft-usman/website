@@ -72,8 +72,7 @@
                                 <a href="#operations" className="hover:text-white transition">Operations</a>
                                 <a href="#faq" className="hover:text-white transition">FAQ</a>
                                 <a href="#contact" className="hover:text-white transition">Contact</a>
-                                <a href="terms.html" className="hover:text-white transition">Terms</a>
-                                <a href="privacy.html" className="hover:text-white transition">Privacy</a>
+                                <a href="founders.html" className="hover:text-white transition">Founders</a>
                             </nav>
 
                             {/* Mobile Menu Button */}
@@ -137,10 +136,10 @@
                                     </defs>
                                     
                                     {/* Flow lines to center */}
-                                    <path d="M120 120 Q500 300 500 400" stroke="url(#flowGradient)" strokeWidth="2" fill="none" className="animate-pulse" />
-                                    <path d="M820 180 Q500 250 500 400" stroke="url(#flowGradient)" strokeWidth="2" fill="none" className="animate-pulse" />
-                                    <path d="M180 580 Q400 450 500 400" stroke="url(#flowGradient)" strokeWidth="2" fill="none" className="animate-pulse" />
-                                    <path d="M780 620 Q600 500 500 400" stroke="url(#flowGradient)" strokeWidth="2" fill="none" className="animate-pulse" />
+                                        <path d="M120 120 Q500 300 500 400" stroke="url(#flowGradient)" strokeWidth="2" fill="none" className="animate-pulse" />
+                                        <path d="M820 180 Q500 250 500 400" stroke="url(#flowGradient)" strokeWidth="2" fill="none" className="animate-pulse" />
+                                        <path d="M180 580 Q400 450 500 400" stroke="url(#flowGradient)" strokeWidth="2" fill="none" className="animate-pulse" />
+                                        <path d="M780 620 Q600 500 500 400" stroke="url(#flowGradient)" strokeWidth="2" fill="none" className="animate-pulse" />
                                     
                                     {/* Central Intelligence Hub */}
                                     <circle cx="500" cy="400" r="80" fill="rgba(249, 115, 22, 0.1)" stroke="rgba(249, 115, 22, 0.5)" strokeWidth="2" />
@@ -299,7 +298,7 @@
 
                     {/* Amazon Sellers Section */}
                     <section id="amazon-sellers" className="max-w-7xl mx-auto px-6 py-28 border-b border-white/10 bg-gradient-to-br from-orange-500/5 to-transparent">
-                        <div className="grid md:grid-cols-2 gap-20 items-center">
+                        <div className="grid lg:grid-cols-[1.05fr_0.95fr] gap-20 items-center">
                             <div>
                                 <div className="text-sm uppercase tracking-[0.25em] text-orange-400 mb-6">
                                     For Amazon Sellers
@@ -309,49 +308,128 @@
                                     Intelligence that turns data into dominance.
                                 </h2>
 
-                                <p className="mt-6 text-white/60 text-lg leading-relaxed">
-                                    Stop guessing and start dominating. Our authoritative intelligence platform gives you the competitive edge through comprehensive market data and predictive analytics.
+                                <p className="mt-6 text-white/60 text-lg leading-relaxed max-w-2xl">
+                                    Stop guessing and start dominating. Our authoritative intelligence platform gives you the competitive edge through comprehensive market data, predictive analytics, and category-level forecasting.
                                 </p>
+
+                                <div className="mt-12 grid gap-4 sm:grid-cols-2">
+                                    {[
+                                        {
+                                            icon: (
+                                                <div className="flex items-center justify-center w-12 h-12 rounded-3xl bg-orange-500/10 text-orange-300">
+                                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" className="w-6 h-6">
+                                                        <path d="M5 19h14" strokeLinecap="round" strokeLinejoin="round" />
+                                                        <path d="M5 14l4-4 3 3 4-6 3 3" strokeLinecap="round" strokeLinejoin="round" />
+                                                        <circle cx="7" cy="10" r="1" />
+                                                    </svg>
+                                                </div>
+                                            ),
+                                            title: 'Market Intelligence',
+                                            desc: 'Real-time pricing data, competitor analysis, and demand forecasting that gives you the complete market picture.'
+                                        },
+                                        {
+                                            icon: (
+                                                <div className="flex items-center justify-center w-12 h-12 rounded-3xl bg-sky-500/10 text-sky-300">
+                                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" className="w-6 h-6">
+                                                        <circle cx="12" cy="12" r="5" strokeLinecap="round" strokeLinejoin="round" />
+                                                        <path d="M12 7v-2M12 19v-2M7 12H5M19 12h-2" strokeLinecap="round" />
+                                                        <path d="M15.5 8.5l3 3" strokeLinecap="round" strokeLinejoin="round" />
+                                                        <path d="M8.5 15.5l-3 3" strokeLinecap="round" strokeLinejoin="round" />
+                                                    </svg>
+                                                </div>
+                                            ),
+                                            title: 'Precision Analytics',
+                                            desc: 'Advanced algorithms that identify profitable opportunities and optimize your product strategy across all categories.'
+                                        },
+                                        {
+                                            icon: (
+                                                <div className="flex items-center justify-center w-12 h-12 rounded-3xl bg-emerald-500/10 text-emerald-300">
+                                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" className="w-6 h-6">
+                                                        <path d="M4 16c0-6 16-6 16 0" strokeLinecap="round" strokeLinejoin="round" />
+                                                        <path d="M9 12l3-6 3 6" strokeLinecap="round" strokeLinejoin="round" />
+                                                        <path d="M12 12v7" strokeLinecap="round" />
+                                                        <path d="M9 12h6" strokeLinecap="round" />
+                                                    </svg>
+                                                </div>
+                                            ),
+                                            title: 'Performance Optimization',
+                                            desc: 'Data-driven recommendations for pricing, inventory, and listings that maximize your account health and sales velocity.'
+                                        },
+                                        {
+                                            icon: (
+                                                <div className="flex items-center justify-center w-12 h-12 rounded-3xl bg-violet-500/10 text-violet-300">
+                                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" className="w-6 h-6">
+                                                        <path d="M12 3l8 4v8l-8 6-8-6V7l8-4z" strokeLinecap="round" strokeLinejoin="round" />
+                                                        <path d="M12 3v11" strokeLinecap="round" />
+                                                        <path d="M9 14h6" strokeLinecap="round" />
+                                                    </svg>
+                                                </div>
+                                            ),
+                                            title: 'Competitive Dominance',
+                                            desc: 'Stay ahead of the competition with proprietary insights and early warning systems for market changes.'
+                                        }
+                                    ].map((benefit) => (
+                                        <div
+                                            key={benefit.title}
+                                            className="flex items-start gap-4 p-6 rounded-3xl border border-white/10 bg-white/[0.02] hover:border-orange-500/30 transition"
+                                        >
+                                            <div className="shrink-0">{benefit.icon}</div>
+                                            <div>
+                                                <h3 className="text-xl font-medium text-white mb-2">
+                                                    {benefit.title}
+                                                </h3>
+                                                <p className="text-white/60 leading-relaxed text-sm">
+                                                    {benefit.desc}
+                                                </p>
+                                            </div>
+                                        </div>
+                                    ))}
+                                </div>
                             </div>
 
-                            <div className="space-y-8">
-                                {[
-                                    {
-                                        icon: '📈',
-                                        title: 'Market Intelligence',
-                                        desc: 'Real-time pricing data, competitor analysis, and demand forecasting that gives you the complete market picture.'
-                                    },
-                                    {
-                                        icon: '🎯',
-                                        title: 'Precision Analytics',
-                                        desc: 'Advanced algorithms that identify profitable opportunities and optimize your product strategy across all categories.'
-                                    },
-                                    {
-                                        icon: '💎',
-                                        title: 'Performance Optimization',
-                                        desc: 'Data-driven recommendations for pricing, inventory, and listings that maximize your account health and sales velocity.'
-                                    },
-                                    {
-                                        icon: '🏆',
-                                        title: 'Competitive Dominance',
-                                        desc: 'Stay ahead of the competition with proprietary insights and early warning systems for market changes.'
-                                    }
-                                ].map((benefit) => (
-                                    <div
-                                        key={benefit.title}
-                                        className="flex items-start gap-4 p-6 rounded-2xl border border-white/10 bg-white/[0.02] hover:border-orange-500/30 transition"
-                                    >
-                                        <div className="text-2xl">{benefit.icon}</div>
-                                        <div>
-                                            <h3 className="text-xl font-medium text-white mb-2">
-                                                {benefit.title}
-                                            </h3>
-                                            <p className="text-white/60 leading-relaxed text-sm">
-                                                {benefit.desc}
-                                            </p>
-                                        </div>
+                            <div className="relative isolate overflow-hidden rounded-[2rem] border border-white/10 bg-[#040506] p-8 shadow-[0_24px_80px_rgba(255,121,63,0.08)]">
+                                <div className="absolute -left-8 -top-8 h-36 w-36 rounded-full bg-orange-400/10 blur-3xl" />
+                                <div className="absolute -right-10 bottom-8 h-44 w-44 rounded-full bg-sky-400/10 blur-3xl" />
+                                <div className="relative grid gap-6">
+                                    <div className="rounded-3xl border border-white/10 bg-white/5 p-6">
+                                        <div className="text-xs uppercase tracking-[0.35em] text-white/40 mb-3">Platform view</div>
+                                        <div className="text-3xl font-semibold text-white">Integrated signal network</div>
+                                        <p className="mt-3 text-white/60 text-sm leading-relaxed">
+                                            Connected analytics, demand signals, and competitive indicators in a single experience built for fast decisions.
+                                        </p>
                                     </div>
-                                ))}
+                                    <div className="relative aspect-[4/3] overflow-hidden rounded-[1.8rem] border border-white/10 bg-[#020306]">
+                                        <svg viewBox="0 0 560 420" className="w-full h-full">
+                                            <defs>
+                                                <linearGradient id="glowLine" x1="0" y1="0" x2="1" y2="1">
+                                                    <stop offset="0%" stopColor="#fb923c" stopOpacity="0.8" />
+                                                    <stop offset="100%" stopColor="#38bdf8" stopOpacity="0.3" />
+                                                </linearGradient>
+                                            </defs>
+                                            <rect x="0" y="0" width="560" height="420" rx="32" fill="#05060a" />
+                                            <path d="M64 96h120l36 40 48-56 64 72 64-76" stroke="#38bdf880" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none" />
+                                            <path d="M184 136v88" stroke="#fb923c" strokeWidth="2" strokeLinecap="round" />
+                                            <circle cx="184" cy="224" r="16" fill="#fb923c" />
+                                            <circle cx="120" cy="98" r="14" fill="#fff" opacity="0.85" />
+                                            <circle cx="304" cy="62" r="10" fill="#38bdf8" opacity="0.9" />
+                                            <circle cx="384" cy="138" r="12" fill="#f97316" opacity="0.9" />
+                                            <circle cx="460" cy="90" r="10" fill="#8b5cf6" opacity="0.8" />
+                                            <circle cx="520" cy="220" r="12" fill="#38bdf8" opacity="0.75" />
+                                            <path d="M384 138c-40 14-90 42-130 68-40 24-82 58-118 76" stroke="#38bdf8" strokeWidth="2" strokeLinecap="round" fill="none" opacity="0.55" />
+                                            <path d="M520 220c-28 18-66 42-102 48" stroke="#fb923c" strokeWidth="2" strokeLinecap="round" fill="none" opacity="0.5" />
+                                            <path d="M80 320h112" stroke="#ffffff20" strokeWidth="2" strokeLinecap="round" />
+                                            <path d="M80 348h84" stroke="#ffffff10" strokeWidth="2" strokeLinecap="round" />
+                                            <path d="M80 376h52" stroke="#ffffff10" strokeWidth="2" strokeLinecap="round" />
+                                            <circle cx="84" cy="320" r="4" fill="#fff" />
+                                            <circle cx="84" cy="348" r="4" fill="#38bdf8" />
+                                            <circle cx="84" cy="376" r="4" fill="#fb923c" />
+                                            <rect x="384" y="260" width="140" height="90" rx="20" fill="#334155" opacity="0.5" />
+                                            <path d="M404 286h98" stroke="#fff" strokeWidth="2" strokeLinecap="round" />
+                                            <path d="M404 310h66" stroke="#ffffff80" strokeWidth="2" strokeLinecap="round" />
+                                            <path d="M404 334h84" stroke="#ffffff60" strokeWidth="2" strokeLinecap="round" />
+                                        </svg>
+                                    </div>
+                                </div>
                             </div>
                         </div>
 
@@ -643,8 +721,8 @@
                                     </p>
 
                                     <div className="space-y-2 text-white/40 text-sm">
-                                        <div>London, United Kingdom</div>
-                                        <div>Supplier & Procurement Partnerships</div>
+                                        <div>86-90 Paul Street, London, England, United Kingdom, EC2A 4NE</div>
+                                        <div>Company Registration: 14757986</div>
                                     </div>
                                 </div>
 
@@ -663,6 +741,7 @@
                                     <h4 className="text-white font-medium mb-6">Company</h4>
                                     <ul className="space-y-3 text-white/40 text-sm">
                                         <li><a href="#about" className="hover:text-white transition">About Us</a></li>
+                                        <li><a href="founders.html" className="hover:text-white transition">Founders & History</a></li>
                                         <li><a href="#operations" className="hover:text-white transition">Operations</a></li>
                                         <li><a href="#contact" className="hover:text-white transition">Contact</a></li>
                                     </ul>
@@ -681,7 +760,7 @@
 
                             <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row items-center justify-between gap-6">
                                 <div className="text-white/40 text-sm">
-                                    © 2024 Codelyft. All rights reserved.
+                                    © 2026 Codelyft. All rights reserved.
                                 </div>
 
                                 <div className="flex items-center gap-6 text-white/40 text-sm">

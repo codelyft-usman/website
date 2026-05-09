@@ -457,6 +457,136 @@
                         </div>
                     </section>
 
+                    {/* Insights Dashboard */}
+                    <section id="insights" className="max-w-7xl mx-auto px-6 py-28 border-b border-white/10 bg-[#050708]">
+                        <div className="text-center mb-16">
+                            <div className="text-sm uppercase tracking-[0.25em] text-orange-400 mb-6">
+                                Market Intelligence
+                            </div>
+                            <h2 className="text-5xl md:text-6xl leading-tight tracking-tight font-semibold max-w-4xl mx-auto">
+                                Dashboard insights for category performance and product momentum.
+                            </h2>
+                            <p className="mt-6 text-white/60 text-lg leading-relaxed max-w-3xl mx-auto">
+                                View the kind of real-time intelligence that turns market signals into fast, confident decisions. Our dashboard brings together ranking, demand, pricing, and competitor trends in one enterprise-grade view.
+                            </p>
+                        </div>
+
+                        <div className="grid gap-10 lg:grid-cols-[1.5fr_0.9fr] items-start">
+                            <div className="rounded-[2rem] border border-white/10 bg-[#020306] p-8 shadow-[0_30px_100px_rgba(8,26,68,0.15)]">
+                                <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
+                                    <div>
+                                        <div className="text-sm uppercase tracking-[0.25em] text-white/40 mb-2">Dashboard snapshot</div>
+                                        <div className="text-3xl font-semibold text-white">Category performance overview</div>
+                                    </div>
+                                    <div className="inline-flex items-center gap-3 rounded-full border border-white/10 bg-white/5 px-4 py-3 text-sm text-white/60">
+                                        Live update · 4 sec ago
+                                    </div>
+                                </div>
+
+                                <div className="mt-8 grid gap-6 xl:grid-cols-[1.4fr_0.8fr]">
+                                    <div className="rounded-[1.6rem] border border-white/10 bg-black/80 p-6">
+                                        <div className="flex items-center justify-between gap-4 mb-6">
+                                            <div>
+                                                <p className="text-sm uppercase tracking-[0.25em] text-white/40">Revenue mix</p>
+                                                <p className="text-4xl font-semibold text-orange-400 mt-2">£68.4M</p>
+                                            </div>
+                                            <div className="rounded-full bg-emerald-500/10 px-3 py-2 text-sm text-emerald-300">+18.3%</div>
+                                        </div>
+                                        <div className="h-48 rounded-[1.5rem] bg-gradient-to-br from-slate-900 via-slate-950 to-[#020406] p-4">
+                                            <svg viewBox="0 0 320 160" className="w-full h-full">
+                                                <path d="M10 130 C60 90 120 110 160 70 C200 30 240 60 310 40" stroke="#fb923c" strokeWidth="3" fill="none" strokeLinecap="round" />
+                                                <path d="M10 130 C60 110 120 115 160 85 C200 55 240 70 310 52" stroke="#38bdf8" strokeWidth="2" fill="none" strokeLinecap="round" opacity="0.75" />
+                                                <circle cx="310" cy="40" r="5" fill="#fb923c" />
+                                                <circle cx="160" cy="70" r="5" fill="#38bdf8" />
+                                            </svg>
+                                        </div>
+                                    </div>
+
+                                    <div className="grid gap-6">
+                                        {[
+                                            { label: 'Revenue Growth', value: '+18.3%', note: 'vs last month', color: 'text-emerald-300' },
+                                            { label: 'Conversion Rate', value: '5.4%', note: 'Top product set', color: 'text-orange-300' },
+                                            { label: 'Average Order Value', value: '£82.50', note: 'High-margin mix', color: 'text-sky-300' }
+                                        ].map((metric) => (
+                                            <div key={metric.label} className="rounded-[1.6rem] border border-white/10 bg-black/80 p-6">
+                                                <div className="flex items-center justify-between gap-4 mb-4">
+                                                    <p className="text-sm uppercase tracking-[0.25em] text-white/40">{metric.label}</p>
+                                                    <span className={`text-sm font-semibold ${metric.color}`}>{metric.note}</span>
+                                                </div>
+                                                <div className="text-5xl font-semibold text-white">{metric.value}</div>
+                                            </div>
+                                        ))}
+                                    </div>
+                                </div>
+
+                                <div className="mt-8 grid gap-4 lg:grid-cols-3">
+                                    {[
+                                        { title: 'Buy Box Share', value: '78%', detail: 'Within top 3 positions' },
+                                        { title: 'Inventory Health', value: '94%', detail: 'Reorder on track' },
+                                        { title: 'Sales Growth', value: '24%', detail: 'Month-over-month increase' }
+                                    ].map((item) => (
+                                        <div key={item.title} className="rounded-3xl border border-white/10 bg-white/5 p-5">
+                                            <p className="text-sm uppercase tracking-[0.25em] text-white/40 mb-3">{item.title}</p>
+                                            <div className="text-3xl font-semibold text-white mb-2">{item.value}</div>
+                                            <p className="text-white/60 text-sm">{item.detail}</p>
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
+
+                            <div className="space-y-6">
+                                <div className="rounded-[1.6rem] border border-white/10 bg-black/80 p-6">
+                                    <div className="flex items-center justify-between gap-4 mb-5">
+                                        <div>
+                                            <p className="text-sm uppercase tracking-[0.25em] text-white/40">Competitive heatmap</p>
+                                            <p className="text-xl font-semibold text-white mt-2">Category share vs. market leader</p>
+                                        </div>
+                                        <span className="text-sm text-white/50">Live view</span>
+                                    </div>
+                                    <div className="grid gap-4">
+                                        {[
+                                            { label: 'Top Seller', value: 'CLFT', score: '48%' },
+                                            { label: 'CodeLyft Coverage', value: '31%', score: '10 pts up' },
+                                            { label: 'Emerging Brands', value: '21%', score: '3 pts up' }
+                                        ].map((row) => (
+                                            <div key={row.label} className="flex items-center justify-between gap-4 rounded-3xl bg-white/5 px-4 py-4">
+                                                <div>
+                                                    <p className="text-sm text-white/40">{row.label}</p>
+                                                    <p className="text-white font-semibold">{row.value}</p>
+                                                </div>
+                                                <div className="text-sm text-emerald-300 font-semibold">{row.score}</div>
+                                            </div>
+                                        ))}
+                                    </div>
+                                </div>
+
+                                <div className="rounded-[1.6rem] border border-white/10 bg-black/80 p-6">
+                                    <div className="flex items-center justify-between gap-4 mb-5">
+                                        <div>
+                                            <p className="text-sm uppercase tracking-[0.25em] text-white/40">Signal drivers</p>
+                                            <p className="text-xl font-semibold text-white mt-2">Key platform movements</p>
+                                        </div>
+                                        <span className="text-sm text-white/50">+14 actionable signals</span>
+                                    </div>
+                                    <div className="space-y-3 text-white/70 text-sm">
+                                        <div className="flex items-center justify-between gap-3 rounded-3xl bg-white/5 px-4 py-3">
+                                            <span>Price volatility</span>
+                                            <span className="text-orange-300">High</span>
+                                        </div>
+                                        <div className="flex items-center justify-between gap-3 rounded-3xl bg-white/5 px-4 py-3">
+                                            <span>Conversion rate</span>
+                                            <span className="text-emerald-300">Strong</span>
+                                        </div>
+                                        <div className="flex items-center justify-between gap-3 rounded-3xl bg-white/5 px-4 py-3">
+                                            <span>Ad spend efficiency</span>
+                                            <span className="text-sky-300">Improving</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
                     {/* Services */}
                     <section id="services" className="max-w-7xl mx-auto px-6 py-28 border-b border-white/10">
                         <div className="text-center mb-16">

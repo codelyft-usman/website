@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Inventory & Cashflow Management for Amazon Sellers — CodeLyft</title>
+  <meta name="description" content="Inventory forecasting and cashflow best practices to avoid stockouts and grow sustainably on Amazon.">
+  <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>body{background:#000;color:#fff;font-family:Inter,system-ui,Arial;}</style>
+</head>
+<body>
+  <div id="root"></div>
+  <script type="text/babel">
+    function Article(){
+      return (
+        <div>
+          <header className="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
+            <a href="index.html" className="flex items-center gap-3 text-sm font-medium tracking-[0.3em] text-white">
+              <div className="w-2 h-2 rounded-full bg-orange-400" />
+              CODELYFT
+            </a>
+
+            <nav className="hidden md:flex items-center gap-6 text-sm text-white/55">
+              <a href="index.html#about" className="hover:text-white transition">About</a>
+              <a href="index.html#amazon-sellers" className="hover:text-white transition">Amazon Sellers</a>
+              <a href="index.html#services" className="hover:text-white transition">Services</a>
+              <a href="index.html#operations" className="hover:text-white transition">Operations</a>
+              <a href="index.html#faq" className="hover:text-white transition">FAQ</a>
+              <a href="index.html#contact" className="hover:text-white transition">Contact</a>
+              <a href="founders.html" className="hover:text-white transition">Founders</a>
+              <a href="blog.html" className="text-orange-400">Research & Blog</a>
+            </nav>
+          </header>
+
+        <div className="max-w-3xl mx-auto px-6 py-12">
+          <a href="blog.html" className="text-sm text-white/60">← Back to Research & Blog</a>
+          <h1 className="text-3xl font-semibold mt-4">Inventory Planning & Cash Flow Management for Scalable Amazon Sellers</h1>
+          <p className="text-white/70 mt-4">Practical frameworks to forecast demand, set reorder points, and protect cashflow while scaling on Amazon.</p>
+
+          <section className="mt-8">
+            <h2 className="text-xl font-semibold">Forecasting Demand</h2>
+            <p className="text-white/70 mt-2">Combine historical sales, seasonality, and marketing plans to forecast inventory needs and avoid stockouts.</p>
+          </section>
+
+          <section className="mt-6">
+            <h2 className="text-xl font-semibold">Reorder Points & Safety Stock</h2>
+            <p className="text-white/70 mt-2">Calculate lead times and set safety stock to balance service levels with working capital.</p>
+          </section>
+
+          <footer className="mt-16 text-white/50 text-sm">© 2026 CodeLyft — Research & Insights</footer>
+        </div>
+        </div>
+      );
+    }
+
+    ReactDOM.createRoot(document.getElementById('root')).render(<Article/>);
+  </script>
+</body>
+</html>

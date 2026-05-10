@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>CodeLyft Research & Blog</title>
+  <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body { background: #000; color: #fff; font-family: Inter, system-ui, Arial; }
+  </style>
+</head>
+<body>
+    <div id="root"></div>
+  <script type="text/babel">
+    const posts = [
+      {
+        url: 'blog-starting-amazon-fba.html',
+        title: 'How to Start Selling on Amazon FBA (2026) — A Complete Step-by-Step Guide',
+        excerpt: 'A practical, step-by-step walkthrough for new sellers covering account setup, product selection, shipping to Amazon, and first sales.'
+      },
+      {
+        url: 'blog-top-categories.html',
+        title: 'Top Product Categories to Sell on Amazon — How to Choose the Right Niche',
+        excerpt: 'Category selection matters — how to evaluate demand, competition and margin potential across categories.'
+      },
+      {
+        url: 'blog-listing-optimization.html',
+        title: 'Listing Optimization: Titles, Images, A+ Content that Convert',
+        excerpt: 'Best practices for writing product titles, bullet points, images and A+ content that improve conversion and ranking.'
+      },
+      {
+        url: 'blog-amazon-ppc.html',
+        title: 'Amazon PPC 101 — Advertising Strategies That Drive Profit',
+        excerpt: 'A beginner-friendly guide to campaign structure, keywords, bidding strategies and measuring ROI.'
+      },
+      {
+        url: 'blog-inventory-cashflow.html',
+        title: 'Inventory & Cashflow Management for Amazon Sellers',
+        excerpt: 'How to forecast demand, avoid stockouts, and optimize cashflow to scale faster and safer.'
+      }
+    ];
+
+    function BlogIndex(){
+      return (
+        <div className="min-h-screen bg-black">
+          <header className="sticky top-0 z-50 border-b border-white/10 backdrop-blur-xl bg-black/70">
+            <div className="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
+              <a href="index.html" className="flex items-center gap-3 text-sm font-medium tracking-[0.3em] text-white">
+                <div className="w-2 h-2 rounded-full bg-orange-400" />
+                CODELYFT
+              </a>
+
+              <nav className="hidden md:flex items-center gap-8 text-sm text-white/55">
+                <a href="index.html#about" className="hover:text-white transition">About</a>
+                <a href="index.html#amazon-sellers" className="hover:text-white transition">Amazon Sellers</a>
+                <a href="index.html#services" className="hover:text-white transition">Services</a>
+                <a href="index.html#operations" className="hover:text-white transition">Operations</a>
+                <a href="index.html#faq" className="hover:text-white transition">FAQ</a>
+                <a href="index.html#contact" className="hover:text-white transition">Contact</a>
+                <a href="founders.html" className="hover:text-white transition">Founders</a>
+                <a href="blog.html" className="text-orange-400">Research & Blog</a>
+              </nav>
+            </div>
+          </header>
+
+          <main className="max-w-5xl mx-auto px-6 py-10">
+            <h1 className="text-4xl font-semibold mb-4">Research & Blog</h1>
+            <p className="text-white/70 mb-8">Actionable research, how-to guides, and market insights for Amazon sellers.</p>
+
+            <div className="space-y-6">
+              {posts.map(p => (
+                <article key={p.url} className="rounded-xl border border-white/10 p-6 bg-white/[0.02]">
+                  <a href={p.url} className="text-xl font-semibold text-orange-400 hover:underline">{p.title}</a>
+                  <p className="text-white/70 mt-2">{p.excerpt}</p>
+                  <div className="mt-4">
+                    <a href={p.url} className="inline-block px-4 py-2 rounded-full bg-orange-500 text-black font-medium">Read article</a>
+                  </div>
+                </article>
+              ))}
+            </div>
+          </main>
+
+          <footer className="max-w-7xl mx-auto px-6 py-10 text-white/40 text-sm">
+            <div className="flex items-center justify-between">
+              <div>© 2026 CodeLyft. Research & Insights.</div>
+              <div className="flex items-center gap-6 text-white/40 text-sm">
+                <a href="privacy.html" className="hover:text-white transition">Privacy Policy</a>
+                <a href="terms.html" className="hover:text-white transition">Terms of Service</a>
+                <a href="#" className="hover:text-white transition">Cookie Policy</a>
+              </div>
+            </div>
+          </footer>
+        </div>
+      );
+    }
+
+    const root = ReactDOM.createRoot(document.getElementById('root'));
+    root.render(<BlogIndex />);
+  </script>
+</body>
+</html>
